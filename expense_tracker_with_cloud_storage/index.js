@@ -8,9 +8,9 @@ const expenseList = document.getElementById("expense-list");
 // CRUD-CRUD url
 const apiUrl = "https://crudcrud.com/api/efafd669503c471bb5537d9100dae5b7/expenses";
 
-// to load saved expenses(if empty use an empty array)
+// to load saved expenses
 let expenses = [];
-let editId = null;                                                      // to track wheather we are editing existing value or not
+let editId = null;                                      // to track wheather we are editing existing value or not
 
 // fetch saved expenses when page loads
 document.addEventListener("DOMContentLoaded", function() {
@@ -30,7 +30,6 @@ function fetchExpenses() {
 }
 
 // to add or update expense
-
 function handleFormSubmit(event) {
     event.preventDefault();
 
