@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Food Orders</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <div>
+            <h1>Restaurant Food Orders</h1>
+
+            <form id="order-form">
+                <div id="indi-form">
+                    <label for="amount" class="label-form">Price</label>
+                    <input 
+                        type="number",
+                        id="amount",
+                        class="label-form",
+                        min="1",
+                        step="1",
+                        required
+                    >
+                </div>
+
+                <div id="indi-form">
+                    <label for="dish" class="label-form">Dish</label>
+                    <input 
+                        type="text"
+                        id="dish"
+                        class="label-form"
+                        required
+                    >
+                </div>
+
+                <div id="indi-form">
+                    <label for="table" class="label-form">Table</label>
+                    <select id="table" required>
+                        <option value="">Select Table</option>
+                        <option value="Table-1">Table 1</option>
+                        <option value="Table-2">Table 2</option>
+                        <option value="Table-3">Table 3</option>
+                    </select> 
+                </div>
+
+                <button type="submit" id="sub-btn">Place Order</button>
+            
+            </form>
+
+        </div>
+        
+        <div>
+            <h2>Orders</h2>
+            <div class="tables">
+                <div class="table-selection">
+                    <h3>Table 1</h3>
+                    <ul id="table1-orders"></ul>
+                </div>
+
+                <div class="table-selection">
+                    <h3>Table 2</h3>
+                    <ul id="table2-orders"></ul>
+                </div>
+
+                <div class="table-selection">
+                    <h3>Table 3</h3>
+                    <ul id="table3-orders"></ul>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

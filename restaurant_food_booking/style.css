@@ -1,0 +1,52 @@
+#order-form {
+    margin: 20px;
+}
+
+#indi-form {
+    font-size:x-large;
+    font-weight: 400;
+    margin-top: 16px;
+}
+
+.label-form {
+    margin-right: 20px;
+}
+
+select {
+    font-size: large;
+    padding: 8px;
+}
+
+#sub-btn {
+    margin-top: 30px;
+    font-size: large;
+    padding: 8px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+h2 {
+    margin-top: 60px;
+}
+
+.tables {
+    margin-top: 40px;
+}
+
+.table-selection {
+    margin-top: 20px;
+    font-size: large;
+    margin-left: 20px;
+}
+
+li {
+    font-size: larger;
+    margin-top: 16px;
+}
+
+.delete-btn {
+    margin-left: 10px;
+    font-size: medium;
+}
