@@ -62,19 +62,70 @@ const app = express();
 // });
 
 
-// Create a middleware function that logs each incoming request’s HTTP method, URL, and timestamp to the console
+// // Create a middleware function that logs each incoming request’s HTTP method, URL, and timestamp to the console
 
-// middleware
-function logger(req, res, next) {
-    console.log("HTTP Method: ", req.method);
-    console.log("HTTP URL: ", req.originalUrl);
-    console.log("Request timestamp: ", Date.now());
+// // middleware
+// function logger(req, res, next) {
+//     console.log("HTTP Method: ", req.method);
+//     console.log("HTTP URL: ", req.originalUrl);
+//     console.log("Request timestamp: ", Date.now());
 
+//     next();
+// }
+
+// //applying middleware on all the HTTP methods below
+// app.use(logger);
+
+// app.get("/sum", function(req, res) {
+//     const a = parseInt(req.query.a);
+//     const b = parseInt(req.query.b);
+
+//     res.json({
+//         ans: a + b
+//     })
+// });
+
+// app.get("/multiply", function(req, res) {
+//     const a = parseInt(req.query.a);
+//     const b = parseInt(req.query.b);
+//     res.json({
+//         ans: a * b
+//     })
+// });
+
+// app.get("/divide", function(req, res) {
+//     const a = parseInt(req.query.a);
+//     const b = parseInt(req.query.b);
+//     res.json({
+//         ans: a / b
+//     })
+
+// });
+
+// app.get("/subtract", function(req, res) {
+//     const a = parseInt(req.query.a);
+//     const b = parseInt(req.query.b);
+//     res.json({
+//         ans: a - b
+//     })
+// });
+
+
+
+
+
+// Create a middleware that counts total number of requests sent to a server. Also create an endpoint that exposes it
+
+//middleware
+
+let countRequest = 0;
+
+function requestCounter(req, res, next) {
+    countRequest++;
     next();
 }
 
-//applying middleware on all the HTTP methods below
-app.use(logger);
+app.use(requestCounter);
 
 app.get("/sum", function(req, res) {
     const a = parseInt(req.query.a);
@@ -82,33 +133,14 @@ app.get("/sum", function(req, res) {
 
     res.json({
         ans: a + b
-    })
+    });
 });
 
-app.get("/multiply", function(req, res) {
-    const a = parseInt(req.query.a);
-    const b = parseInt(req.query.b);
+app.get("/endpointsCount", function(req, res) {
     res.json({
-        ans: a * b
+        totalRequests: countRequest
     })
-});
-
-app.get("/divide", function(req, res) {
-    const a = parseInt(req.query.a);
-    const b = parseInt(req.query.b);
-    res.json({
-        ans: a / b
-    })
-
-});
-
-app.get("/subtract", function(req, res) {
-    const a = parseInt(req.query.a);
-    const b = parseInt(req.query.b);
-    res.json({
-        ans: a - b
-    })
-});
+})
 
 
 app.listen(3000);
