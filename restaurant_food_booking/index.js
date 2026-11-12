@@ -1,4 +1,4 @@
-const apiUrl = "https://crudcrud.com/api/da152a235426473db2deb1bb520a19b9/restaurantOrders";
+const apiUrl = "https://crudcrud.com/api/6ac6a8d606a74f45a60af5d252255f21/restaurantOrders";
 
 // fetch and display order when page loads
 document.addEventListener("DOMContentLoaded", () => {
